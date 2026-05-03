@@ -98,11 +98,20 @@ export default function LoginPage() {
         }
       />
 
+      
+
       <button
-        disabled={loading}
-        className="w-full bg-violet-600 hover:bg-violet-700 transition p-3 rounded-lg text-white"
+      disabled={loading}
+      className="w-full bg-violet-600 hover:bg-violet-700 transition p-3 rounded-lg text-white flex items-center justify-center gap-2"
       >
-        {loading ? "Logging in..." : "Login"}
+        {loading ? (
+          <>
+            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+            Logging in...
+          </>
+        ) : (
+          "Login"
+        )}
       </button>
 
       <p className="text-gray-400 text-sm text-center">
